@@ -1,0 +1,16 @@
+<!-- adding a header and footer using ejs partials  -->
+<%- include('partials/header') %>
+
+<h1>HOME</h1>
+<p> <%= receiveHC %> </p>
+<% receiveAllPosts.forEach(function(obj){  %>
+    <h1> <%= obj.postTitle %> </h1>
+    <br>
+    <p>
+        <%= obj.postText.substring(0,90) + "..." %>
+        <a href="posts/<%= obj.postTitle %>">Read More</a>
+    </p>
+<% }); %>
+
+
+<%- include('partials/footer') %>
