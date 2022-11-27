@@ -1,19 +1,15 @@
 <%- include('partials/header') %>
 
-<h1>COMPOSE</h1>
-
-<div class="form-group">
-    <form action="/compose" method="post">
-        <label for="">Title</label>
-        <textarea class = "form-control" name="titleInput" cols="30" rows="1"></textarea>
-        <label for="">Post</label>
-        <textarea class="form-control" name="postInput"  cols="30" rows="5"></textarea>
-        <br>
-        <button class = "btn btn-primary" type="submit">submit</button>
-    </form>
-    
-</div>
-
-
+<h1 style="text-align: center; color: darkslateblue;">Write Your bLog here</h1>
+<br><br>
+<form action="/compose" method="post">
+    <h3 style="padding-left: 10px;">Title: </h3>
+    <textarea name="title" class="form-control" cols="30" rows="3"></textarea>
+    <h3 style="padding-left: 10px;">Post: </h3>
+    <textarea name="post" class = "form-control" cols="30" rows="10"></textarea>
+    <br>
+    <button type="submit" style="margin-left: 10px;">post</button>
+    <br>
+</form>
 
 <%- include('partials/footer') %>

@@ -1,15 +1,29 @@
-<!-- adding a header and footer using ejs partials  -->
 <%- include('partials/header') %>
 
-<h1>HOME</h1>
-<p> <%= receiveHC %> </p>
-<% receiveAllPosts.forEach(function(obj){  %>
-    <h1> <%= obj.postTitle %> </h1>
+<!-- creating a search bar which can help in searching a post.  -->
+<form action="/home" method="post" style="padding-left: 15px;">
+    <label for="">Search a Post: </label>
     <br>
-    <p>
-        <%= obj.postText.substring(0,90) + "..." %>
-        <a href="posts/<%= obj.postTitle %>">Read More</a>
-    </p>
+    <textarea name="searchTitle"  cols="20" rows="1"></textarea>
+    <br>
+    <button type="submit">search</button>
+</form>
+
+<!-- Random. -->
+
+<h1 style="text-align: center; color: cadetblue;">
+    All Blog's Here.
+</h1>
+
+
+<!-- all the posts are viewed from the array of objects using the loop. -->
+
+<% allPosts.forEach(function(obj){ %>
+    <br><br>
+    <h3 style="text-align: center;"><%= obj.title %></h3>
+    <br>
+    <h5 style="text-align: center;"><%= obj.post %></h5>
+    <br>
 <% }); %>
 
 
